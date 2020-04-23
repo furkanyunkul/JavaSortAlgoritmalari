@@ -1,0 +1,25 @@
+import java.util.Arrays;
+
+public class Main {
+	public static void main(String[] args) {
+
+	int[] list = {5, 3, 2, 1, 6, 7, 8};
+		
+		for (int i = 1; i < list.length; i++) {
+			// Her bir elemanÄ± onceki buyuk oldugu siraca yer degistir. 
+			for (int j = i; j > 0; j--) {
+				if(list[j] > list[j-1]) {
+					break;
+				} else {
+					int temp = list[j];
+					list[j] = list[j-1];
+					list[j-1] = temp;
+				}
+			}
+		}
+		
+		System.out.println(Arrays.toString(list));
+	}
+}
+
+
