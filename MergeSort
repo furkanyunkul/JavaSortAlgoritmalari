@@ -1,14 +1,11 @@
 
 public class Main {
-	
-    // Merges two subarrays of arr[]. 
-    // First subarray is arr[l..m] 
-    // Second subarray is arr[m+1..r] 
-    public static void merge(int arr[], int l, int m, int r) 
+	//int l, int m, int r
+    public static void merge(int arr[], int first, int mid, int last) 
     { 
         // Find sizes of two subarrays to be merged 
-        int n1 = m - l + 1; 
-        int n2 = r - m; 
+        int n1 = mid - first + 1; 
+        int n2 = last - mid; 
   
         /* Create temp arrays */
         int L[] = new int [n1]; 
@@ -16,9 +13,9 @@ public class Main {
   
         /*Copy data to temp arrays*/
         for (int i=0; i<n1; ++i) 
-            L[i] = arr[l + i]; 
+            L[i] = arr[first + i]; 
         for (int j=0; j<n2; ++j) 
-            R[j] = arr[m + 1+ j]; 
+            R[j] = arr[mid + 1+ j]; 
   
   
         /* Merge the temp arrays */
@@ -27,7 +24,7 @@ public class Main {
         int i = 0, j = 0; 
   
         // Initial index of merged subarry array 
-        int k = l; 
+        int k = first; 
         while (i < n1 && j < n2) 
         { 
             if (L[i] <= R[j]) 
